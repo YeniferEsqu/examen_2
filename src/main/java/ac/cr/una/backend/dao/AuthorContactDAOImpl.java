@@ -21,10 +21,14 @@ public class AuthorContactDAOImpl implements AuthorContactDAO {
     @Override
     public boolean deleteAll() {
         boolean isDeleted = false;
-        String stringQuery = "DELETE FROM authorcontact";
-        Query query = session.createQuery(stringQuery);
-        isDeleted = true;
-        query.executeUpdate();
+        List<AuthorContact> authorContactList = new ArrayList<>();
+        session.beginTransaction();
+        authorContactList = session.createCriteria(AuthorContact.class).list();
+        for (Object obj : authorContactList) {
+            session.delete(obj);
+            isDeleted = true;
+        }
+        session.getTransaction().commit();
         return isDeleted;
     }
 
@@ -48,7 +52,7 @@ public class AuthorContactDAOImpl implements AuthorContactDAO {
      */
     @Override
     public List<AuthorContact> findAll() {
-       List<AuthorContact> authorContactList = new ArrayList<>();
+        List<AuthorContact> authorContactList = new ArrayList<>();
 
         authorContactList = session.createCriteria(AuthorContact.class).list();
 
