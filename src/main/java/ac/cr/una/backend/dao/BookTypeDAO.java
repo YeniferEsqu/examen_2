@@ -19,10 +19,10 @@ public interface BookTypeDAO {
 
     /**
      *
-     * @param authorContact
+     * @param bookType
      * @return
      */
-    public BookType save(BookType authorContact);
+    public BookType save(BookType bookType);
 
     /**
      *

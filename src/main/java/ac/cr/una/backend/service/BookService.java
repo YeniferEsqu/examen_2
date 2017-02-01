@@ -11,13 +11,29 @@ import java.util.List;
 
 
 public interface BookService {
-     public boolean deleteAll();
 
     /**
      *
-     * @param authorContact
      * @return
      */
-    public Book save(Book authorContact);
+    public boolean deleteAll();
+
+    /**
+     *
+     * @param book
+     * @return
+     */
+    public Book save(Book book);
+
+    /**
+     *
+     * @return
+     */
     public List<Book> findAll();
+
+    /**
+     *
+     * @return
+     */
+    public float totalPriceAll();
 }

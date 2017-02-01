@@ -163,7 +163,7 @@ public class AuthorContact implements Serializable {
 
     @Override
     public String toString() {
-        return "AuthorContact{" + "idAuthorContact=" + idAuthorContact + ", idAuthor=" + idAuthor + ", contact=" + contact + ", type=" + type + '}';
+        return "AuthorContact{ idAuthor " + idAuthor + ", contact=" + contact + "idAuthorContact=" + idAuthorContact  + ", type=" + type + '}';
     }
     
     

@@ -107,7 +107,7 @@ public class Author implements Serializable {
 
     @Override
     public String toString() {
-        return "Author{" + "idAuthor=" + idAuthor + ", name=" + name + '}';
+        return "author{" + "idAuthor=" + idAuthor + ", name=" + name + '}';
     }
     
     

@@ -1,6 +1,4 @@
-
 package ac.cr.una.backend.dao;
-
 
 import ac.cr.una.backend.model.Book;
 import java.util.ArrayList;
@@ -11,15 +9,13 @@ import org.hibernate.Session;
  *
  * @author Yeni
  */
-
-
 public class BookDAOImpl implements BookDAO {
 
     private final Session session = HibernateUtil.getSessionFactory().openSession();
 
     @Override
     public boolean deleteAll() {
-         boolean isDeleted = false;
+        boolean isDeleted = false;
         List<Book> bookList = new ArrayList<>();
         session.beginTransaction();
         bookList = session.createCriteria(Book.class).list();
@@ -49,10 +45,6 @@ public class BookDAOImpl implements BookDAO {
         return book;
     }
 
-    @Override
-    public float totalPriceAll() {
-         return 0;
-    }
     
-    
+
 }

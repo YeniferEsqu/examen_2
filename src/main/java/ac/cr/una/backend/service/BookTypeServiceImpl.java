@@ -9,11 +9,14 @@ import ac.cr.una.backend.model.BookType;
  * @author Yeni
  */
 
-
 public class BookTypeServiceImpl implements BookTypeService {
 
     private BookTypeDAO bookTypeDAO;
 
+    /**
+     *
+     * @param bookTypeDAO
+     */
     public BookTypeServiceImpl(BookTypeDAO bookTypeDAO) {
         this.bookTypeDAO = bookTypeDAO;
     }
@@ -25,8 +28,8 @@ public class BookTypeServiceImpl implements BookTypeService {
     }
 
     @Override
-    public BookType save(BookType authorContact) {
-        return bookTypeDAO.save(authorContact);
+    public BookType save(BookType bookType) {
+        return bookTypeDAO.save(bookType);
     }
 
     @Override

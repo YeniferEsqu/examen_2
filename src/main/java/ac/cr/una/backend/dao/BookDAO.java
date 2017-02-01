@@ -19,10 +19,15 @@ public interface BookDAO {
 
     /**
      *
-     * @param authorContact
+     * @param book
      * @return
      */
-    public Book save(Book authorContact);
+    public Book save(Book book);
+
+    /**
+     *
+     * @return
+     */
     public List<Book> findAll();
-    public float totalPriceAll();
+
 }

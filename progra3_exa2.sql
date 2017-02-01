@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 01-02-2017 a las 02:53:43
+-- Tiempo de generación: 01-02-2017 a las 23:40:13
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -30,7 +30,14 @@ CREATE TABLE IF NOT EXISTS `author` (
   `id_Author` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   PRIMARY KEY (`id_Author`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=29 ;
+
+--
+-- Volcado de datos para la tabla `author`
+--
+
+INSERT INTO `author` (`id_Author`, `name`) VALUES
+(28, 'Markus Suzak');
 
 -- --------------------------------------------------------
 
@@ -44,15 +51,14 @@ CREATE TABLE IF NOT EXISTS `authorcontact` (
   `contact` text NOT NULL,
   `type` text NOT NULL,
   PRIMARY KEY (`id_authorContact`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Volcado de datos para la tabla `authorcontact`
 --
 
 INSERT INTO `authorcontact` (`id_authorContact`, `id_Author`, `contact`, `type`) VALUES
-(11, 8, '88765345', 'Celular'),
-(12, 9, '98557654', 'celular');
+(27, 28, '25679302', 'Telefono');
 
 -- --------------------------------------------------------
 
@@ -68,7 +74,7 @@ CREATE TABLE IF NOT EXISTS `book` (
   `dateRelease` date NOT NULL,
   `price` float NOT NULL,
   PRIMARY KEY (`id_book`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -80,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `booktype` (
   `id_type` int(11) NOT NULL AUTO_INCREMENT,
   `type` text NOT NULL,
   PRIMARY KEY (`id_type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=27 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

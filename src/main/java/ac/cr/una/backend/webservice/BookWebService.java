@@ -2,12 +2,9 @@ package ac.cr.una.backend.webservice;
 
 import ac.cr.una.backend.dao.BookDAO;
 import ac.cr.una.backend.dao.BookDAOImpl;
-import ac.cr.una.backend.dao.BookTypeDAOImpl;
 import ac.cr.una.backend.model.Book;
-import ac.cr.una.backend.model.BookType;
 import ac.cr.una.backend.service.BookService;
 import ac.cr.una.backend.service.BookServiceImpl;
-import ac.cr.una.backend.service.BookTypeServiceImpl;
 import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -32,9 +29,16 @@ public class BookWebService {
     @Context
     private UriInfo context;
 
+    /**
+     *
+     */
     public BookWebService() {
     }
 
+    /**
+     *
+     * @return
+     */
     @DELETE
     @Path("/")
     public boolean deleteAll() {
@@ -47,10 +51,14 @@ public class BookWebService {
         return result;
     }
 
+    /**
+     *
+     * @return
+     */
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Book> getAllAuthors() {
+    public List<Book> findAll() {
         List<Book> authorList = null;
         bookDAO = new BookDAOImpl();
         service = new BookServiceImpl(bookDAO);
@@ -59,12 +67,17 @@ public class BookWebService {
 
         return authorList;
     }
-    
-     @POST
+
+    /**
+     *
+     * @param book
+     * @return
+     */
+    @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Book createBook(Book book) {
+    public Book save(Book book) {
 
         bookDAO = new BookDAOImpl();
         service = new BookServiceImpl(bookDAO);
@@ -73,4 +86,22 @@ public class BookWebService {
 
         return book;
     }
+//
+//    /**
+//     *
+//     * @return
+//     */
+//    @GET
+//    @Path("/")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public float totalPriceAll() {
+//        float price;
+//        bookDAO = new BookDAOImpl();
+//        service = new BookServiceImpl(bookDAO);
+//
+//        price = service.totalPriceAll();
+//
+//        return price;
+//    }
+
 }

@@ -2,6 +2,7 @@
 package ac.cr.una.backend.model;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -42,7 +43,7 @@ public class Book implements Serializable {
     private String name;
     
     @Column(name = "dateRelease", unique = false, nullable = false)
-    private String contact;
+    private Calendar dateRelease;
     
     @Column(name = "price", unique = false, nullable = false)
     private float price;
@@ -56,12 +57,12 @@ public class Book implements Serializable {
      * @param contact
      * @param price
      */
-    public Book(int idBook, Author idAuthor, BookType idType, String name, String contact, float price) {
+    public Book(int idBook, Author idAuthor, BookType idType, String name, Calendar contact, float price) {
         this.idBook = idBook;
         this.idAuthor = idAuthor;
         this.idType = idType;
         this.name = name;
-        this.contact = contact;
+        this.dateRelease = contact;
         this.price = price;
     }
 
@@ -139,16 +140,16 @@ public class Book implements Serializable {
      *
      * @return
      */
-    public String getContact() {
-        return contact;
+    public Calendar getdateRelease() {
+        return dateRelease;
     }
 
     /**
      *
      * @param contact
      */
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setdateRelease(Calendar contact) {
+        this.dateRelease = contact;
     }
 
     /**
@@ -174,7 +175,7 @@ public class Book implements Serializable {
         hash = 61 * hash + Objects.hashCode(this.idAuthor);
         hash = 61 * hash + Objects.hashCode(this.idType);
         hash = 61 * hash + Objects.hashCode(this.name);
-        hash = 61 * hash + Objects.hashCode(this.contact);
+        hash = 61 * hash + Objects.hashCode(this.dateRelease);
         hash = 61 * hash + Objects.hashCode(this.price);
         return hash;
     }
@@ -197,7 +198,7 @@ public class Book implements Serializable {
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.contact, other.contact)) {
+        if (!Objects.equals(this.dateRelease, other.dateRelease)) {
             return false;
         }
         if (!Objects.equals(this.price, other.price)) {
@@ -214,7 +215,7 @@ public class Book implements Serializable {
 
     @Override
     public String toString() {
-        return "Book{" + "idBook=" + idBook + ", idAuthor=" + idAuthor + ", idType=" + idType + ", name=" + name + ", contact=" + contact + ", price=" + price + '}';
+        return "Book{" + ", idAuthor=" + idAuthor + ", dateRelease=" + dateRelease + ", name=" + name + ", price=" + price + "idBook=" + idBook  + ", idType=" + idType  + '}';
     }
     
     

@@ -22,7 +22,7 @@ import javax.ws.rs.core.UriInfo;
  * @author Yeni
  */
 
-@Path("booksTypes")
+@Path("booktypes")
 public class BookTypeWebService {
    private BookTypeDAO bookDAO;
    private BookTypeService service;
@@ -30,9 +30,17 @@ public class BookTypeWebService {
    @Context
     private UriInfo context;
 
+    /**
+     *
+     */
     public BookTypeWebService() {
     }
    
+    /**
+     *
+     * @param type
+     * @return
+     */
     @GET
     @Path("/{type}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -46,6 +54,10 @@ public class BookTypeWebService {
         return book;
     }
     
+    /**
+     *
+     * @return
+     */
     @DELETE
     @Path("/")
     public boolean deleteAll() {
@@ -58,7 +70,11 @@ public class BookTypeWebService {
         return result;
     }
     
-    
+    /**
+     *
+     * @param book
+     * @return
+     */
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)

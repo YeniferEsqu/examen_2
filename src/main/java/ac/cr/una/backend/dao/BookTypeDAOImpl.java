@@ -23,6 +23,7 @@ public class BookTypeDAOImpl implements BookTypeDAO {
         List<BookType> authorContactList = new ArrayList<>();
         session.beginTransaction();
         authorContactList = session.createCriteria(BookType.class).list();
+        
         for (Object obj : authorContactList) {
             session.delete(obj);
             isDeleted = true;

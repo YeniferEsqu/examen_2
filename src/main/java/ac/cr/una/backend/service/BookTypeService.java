@@ -11,14 +11,18 @@ import ac.cr.una.backend.model.BookType;
 
 public interface BookTypeService {
     
+    /**
+     *
+     * @return
+     */
     public boolean deleteAll();
 
     /**
      *
-     * @param authorContact
+     * @param bookType
      * @return
      */
-    public BookType save(BookType authorContact);
+    public BookType save(BookType bookType);
 
     /**
      *

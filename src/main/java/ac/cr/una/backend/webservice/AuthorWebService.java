@@ -35,9 +35,16 @@ public class AuthorWebService {
     @Context
     private UriInfo context;
 
+    /**
+     *
+     */
     public AuthorWebService() {
     }
     
+    /**
+     *
+     * @return
+     */
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
@@ -51,7 +58,12 @@ public class AuthorWebService {
         return authorList;
     }
     
-     @GET
+    /**
+     *
+     * @param nombre
+     * @return
+     */
+    @GET
     @Path("/{name}")
     @Produces(MediaType.APPLICATION_JSON)
     public Author getAuthorsByName(@PathParam("name") String nombre) {
@@ -64,7 +76,11 @@ public class AuthorWebService {
         return author;
     }
     
-     @DELETE
+    /**
+     *
+     * @return
+     */
+    @DELETE
     @Path("/")
     public boolean deleteAuthor() {
         boolean result;
@@ -76,6 +92,11 @@ public class AuthorWebService {
         return result;
     }
     
+    /**
+     *
+     * @param author
+     * @return
+     */
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
