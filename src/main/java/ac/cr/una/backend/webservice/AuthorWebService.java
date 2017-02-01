@@ -54,14 +54,14 @@ public class AuthorWebService {
      @GET
     @Path("/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Author getAuthors(@PathParam("name") String nombre) {
-        Author student = null;
+    public Author getAuthorsByName(@PathParam("name") String nombre) {
+        Author author = null;
         authorDAO = new AuthorDAOImpl();
         authorService = new AuthorServiceImpl(authorDAO);
 
-        student = authorService.findByName(nombre);
+        author = authorService.findByName(nombre);
 
-        return student;
+        return author;
     }
     
      @DELETE

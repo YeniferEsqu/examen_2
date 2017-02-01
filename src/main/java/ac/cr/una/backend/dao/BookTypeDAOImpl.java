@@ -43,7 +43,7 @@ public class BookTypeDAOImpl implements BookTypeDAO {
     @Override
     public BookType findByName(String type) {
          BookType author = null;
-        Query query = session.createQuery("from booktype where type=:type");
+        Query query = session.createQuery("from BookType where type=:type");
         query.setParameter("type", type);
         
         if (query.list().size() > 0) {
